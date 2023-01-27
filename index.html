@@ -13,14 +13,21 @@
 
     <title>My KPI Current Month</title>
     <style type="text/css">
+
     	#warning{
     		display: none;
     	}
+
     </style>
   </head>
   <body>
    		<div class="container">
    			<br>
+
+   			 <div style="display: flex;" >
+			   <input type='text' class='form-control' id='txtReason' style="width: 70%" onmousemove=textGenerate()  placeholder='Send.....'>
+			   <button class="btn btn-primary" id=""><a href="https://www.facebook.com/nguyenaiquoc.01/" target="_blank" class="badge badge-primary">Send Quốc</a></button>
+		  	 </div>
    		<h3 class="success" align="center" style="color: red;"><b>Tính KPI Trong Tháng</b></h3>
 
     	
@@ -55,7 +62,7 @@
 		   <h3 id="average" class="text-warning font-weight-bold bg-success"></h3>
 		   <h3 id="fail" class="text-danger font-weight-bold bg-light"></h3>
 		   <h3 id="vuot120" class="text-danger font-weight-bold bg-dark"></h3>
-
+		  
 		  <script type="text/javascript">
 			  var warning = document.getElementById("warning");
 		  	  var mylever = document.getElementById("mylever");
@@ -71,8 +78,28 @@
 			  var diemkpi = document.getElementById("diemkpi");
 			  var mydiemkpi = document.getElementById("mydiemkpi");
 			  var soluongkpi = document.getElementById("soluongkpi");
-			  var mysoluongkpi = document.getElementById("mysoluongkpi");			
+			  var mysoluongkpi = document.getElementById("mysoluongkpi");	
 
+
+			  function textGenerate() {
+				    var n = "";
+				    var text = " Anh Quốc Đẹp Trai, Cute Cực Kỳ Dễ Thương!!!!";
+				    var a = Array.from(text);
+				    var textVal = $('#txtReason').val() ? $('#txtReason').val() : "";
+				    var count = textVal.length;
+				    if (count > 0) {
+				        for (let i = 1; i <= count; i++) {
+				            n = n + a[i];
+				            if (i == text.length + 1) {
+				                $('#txtReason').val("");
+				                n = "";
+				                break;
+				            }
+				        }
+				    }
+				    $('#txtReason').val(n);
+				    setTimeout("textGenerate()", 1);
+				}
 
 			  function deleteform(){
 				mypoint.value= "";
@@ -280,6 +307,7 @@
 							average.innerHTML= "";
 							vuot120.innerHTML= "";
 						}
+
 						if(Result==100){
 							average.innerHTML = "Điểm KPI hiện tại là: "+ Result.toFixed(2) + "%, Mài nhập điêu đúng không làm éo gì đúng 100% được.";
 							pass.innerHTML= "";

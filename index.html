@@ -8,6 +8,9 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 	<meta property="og:title" content="Hệ thống tính điểm KPI siêu cấp vũ trụ." itemprop="name">
+	<link rel="shortcut icon" href="https://i.pinimg.com/280x280_RS/44/25/cd/4425cd0d105af26f18bf695bfa95b1db.jpg" type="image/x-icon">
+	<meta property="og:image" content="https://i.imgur.com/xMWAHtx.jpg">
+
     <title>My KPI Current Month</title>
     <style type="text/css">
     	#warning{
@@ -22,7 +25,7 @@
 
     	
 		<div class="alert alert-danger alert-dismissible fade show mb-0" role="alert" id="warning">
-			<i class="fas fa-check-circle"></i> Mày Không Nhập Số Sao Tao Biết Đường Tính!!
+			<i class="fas fa-check-circle"></i> Mày Nhập Xàm Hoặc Không Nhập Số Sao Tao Biết Đường Tính!!
 			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			  <span aria-hidden="true">&times;</span>
 			</button>
@@ -87,6 +90,16 @@
 			  function excuteform(){
 				if(mylever.value==""|| mypoint.value==""|| myquantity.value==""){
 					warning.style.display = "block";
+					mypoint.value= "";
+					myquantity.value= "";
+					pass.innerHTML= "";
+					fail.innerHTML= "";
+					average.innerHTML= "";
+					vuot120.innerHTML= "";
+					diemkpi.innerHTML= "";
+					mydiemkpi.innerHTML= "";
+					soluongkpi.innerHTML= "";
+					mysoluongkpi.innerHTML= "";
 				}else{
 					warning.style.display = "none";
 					if(mylever.value=="1"){
